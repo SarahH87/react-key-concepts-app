@@ -2,6 +2,7 @@ import keyConceptsImage from './assets/images/key-concepts.png';
 import componentsImage from './assets/images/components.png';
 import stateImage from './assets/images/state.png';
 import eventsImage from './assets/images/events.png';
+import Concepts from "./components/Concepts";
 
 const concepts = [
   {
@@ -36,15 +37,7 @@ function App() {
         <p>Selected key React concepts you should know about</p>
       </header>
 
-      <ul id="concepts">
-        {concepts.map(concept =>
-          <li key={concept.id} className="concept">
-            <img src={concept.image} alt={concept.title}/>
-            <h2>{concept.title}</h2>
-            <p>{concept.description}</p>
-          </li>
-        )}
-      </ul>
+      <Concepts concepts={concepts} />
     </div>
   );
 }
