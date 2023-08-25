@@ -5,18 +5,21 @@ import eventsImage from './assets/images/events.png';
 
 const concepts = [
   {
+    id: 0,
     title: 'Components',
     image: componentsImage,
     description:
       'Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. Components can receive data via props, and they can render dynamic output using JSX.',
   },
   {
+    id: 1,
     title: 'State',
     image: stateImage,
     description:
       'State is data that may change over time. As it changes, the UI should be updated to reflect the updated data. Each component can maintain its own state and multiple components can share state.',
   },
   {
+    id: 2,
     title: 'Events',
     image: eventsImage,
     description:
@@ -32,12 +35,15 @@ function App() {
         <h1>Key React Concepts</h1>
         <p>Selected key React concepts you should know about</p>
       </header>
+
       <ul id="concepts">
-        <li className="concept">
-          <img src={concepts[0].image} alt={concepts[0].title} />
-          <h2>{concepts[0].title}</h2>
-          <p>{concepts[0].description}</p>
-        </li>
+        {concepts.map(concept =>
+          <li key={concept.id} className="concept">
+            <img src={concept.image} alt={concept.title}/>
+            <h2>{concept.title}</h2>
+            <p>{concept.description}</p>
+          </li>
+        )}
       </ul>
     </div>
   );
