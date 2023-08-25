@@ -1,12 +1,14 @@
+import Concept from "./Concept";
+
 const Concepts = (props) => {
     return (
         <ul id="concepts">
             {props.concepts.map(concept =>
-                <li key={concept.id} className="concept">
-                    <img src={concept.image} alt={concept.title}/>
-                    <h2>{concept.title}</h2>
-                    <p>{concept.description}</p>
-                </li>
+                <Concept key={concept.id}
+                         image={concept.image}
+                         title={concept.title}
+                         description={props.description}
+                />
             )}
         </ul>
     )
